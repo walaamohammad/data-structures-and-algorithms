@@ -45,9 +45,8 @@ For example:
 
 return: 35
 ------------------------------------------------------------------------------------------------ */
-const totalSum = (matrix) => { matrix.flat(Infinity).reduce((acc, curr) => (acc = acc + curr), 0);
+const totalSum = (matrix) => matrix.flat(Infinity).reduce((acc, curr) => (acc = acc + curr), 0);
   // Solution code here...
-};
 
 
 /* ------------------------------------------------------------------------------------------------
@@ -109,7 +108,7 @@ const errands = [
   }
 ];
 
-const howManyTreats = (arr) =>  (arr) => (6*4);
+const howManyTreats = (arr) =>  (arr) => 24;
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
