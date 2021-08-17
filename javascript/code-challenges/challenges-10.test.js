@@ -7,7 +7,7 @@ Write a function named returnTen, takes in a string and uses split and splice to
 
 ------------------------------------------------------------------------------------------------ */
 
-function returnTen(str){ return str.split("").splice(str.length - 10, str.length);
+function returnTen(str){  return str.split('').splice(-10);;
   // Solution code here...
 }
 
@@ -25,10 +25,13 @@ For example:
 
 return: 23
 ------------------------------------------------------------------------------------------------ */
-const findMax = (matrix) => { matrix
-  .reduce((acc, cur) => (acc = acc < cur ? acc : cur))
-  .reduce((acc, cur) => (acc = acc > cur ? acc : cur));
+const findMax = (matrix) => {
   // Solution code here...
+  return matrix.reduce((acc, curr) => {
+    return Math.max(acc, (curr.reduce((acc2, curr2) => {
+      return Math.max(acc2, curr2);
+    }, null)));
+  }, null);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -45,7 +48,13 @@ For example:
 
 return: 35
 ------------------------------------------------------------------------------------------------ */
-const totalSum = (matrix) => matrix.flat(Infinity).reduce((acc, curr) => (acc = acc + curr), 0);
+const totalSum = (matrix) => {
+  return matrix.reduce((acc, curr) => {
+    return acc + curr.reduce((acc2, curr2) => {
+      return acc2 + curr2;
+    }, 0);
+  }, 0);
+}
   // Solution code here...
 
 
@@ -108,8 +117,19 @@ const errands = [
   }
 ];
 
-const howManyTreats = (arr) =>  (arr) => 24;
+const howManyTreats = (arr) => {
+  // Solution code here...
+  let quantity=0;
 
+  for( let i=0 ; i <= arr.length-1 ; i++){
+    for (let j=0 ; j<=arr[i].items.length -1 ;j++ ){
+     if(arr[i].items[j].name === 'Treats') {
+       quantity = arr[i].items[j].quantity;
+     }
+    }
+  }
+return quantity;
+};
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
 
